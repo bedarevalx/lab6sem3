@@ -20,23 +20,38 @@ namespace prog6.sem32
                 population = b;
                 millitarypow = c;
             }
-            void surrend()
+            private void Surrend()
             {
                 Console.WriteLine($"Государство {title} сдалось");
                 surrender = true;
             }
-            void endwar()
+            private void Endwar()
             {
                 score = population * millitarypow;
             }
-            string title;
-            int population;
-            float score;
-            float millitarypow;
-            bool surrender = false;
-            bool win = false;
+            public string title;
+            public int population;
+            public float score;
+            public float millitarypow;
+            public bool surrender = false;
+            public bool win = false; 
         };
-        static void Main(string[] args)
+        class peacefull : nation {
+        private void Devpopulation()
+        {
+            Console.WriteLine($"\nУ государства {title} выросла популяция, военная сила уменьшена");
+            population =(int)(population*1.5);
+            millitarypow = (int)(millitarypow-0.1);
+        }
+        private void Display()
+        {
+            Console.WriteLine($"Информация о государстве {title}");
+            Console.WriteLine($"Популяция - {population}");
+            Console.WriteLine($"Военная мощь - {millitarypow}");
+            Console.WriteLine($"Тип государства - Дружелюбное");
+        }
+    };
+    static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
