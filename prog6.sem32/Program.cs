@@ -51,6 +51,21 @@ namespace prog6.sem32
             Console.WriteLine($"Тип государства - Дружелюбное");
         }
     };
+        class enemy : nation {
+        void devmilitar()
+        {
+            Console.WriteLine($"\nУ государства {title} увеличилась военная мощь, популяция уменьшена");
+            millitarypow += 1;
+            population = (int)(population*0.7);
+        }
+        void Display()
+        {
+            Console.WriteLine($"Информация о государстве {title}");
+            Console.WriteLine($"Популяция - {population}");
+            Console.WriteLine($"Военная мощь - {millitarypow}");
+            Console.WriteLine($"Тип государства - Военное");
+        }
+    };
     static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
