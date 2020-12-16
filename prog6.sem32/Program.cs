@@ -8,11 +8,11 @@ namespace prog6.sem32
             public void Read()
             {
                 Console.WriteLine("Введите название государства:");
-                Console.WriteLine(title);
+                title = Console.ReadLine();
                 Console.WriteLine("Введите кол-во населения:");
-                Console.WriteLine(population);
+                population = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите военную мощь (=<2):");
-                Console.WriteLine(millitarypow);
+                millitarypow = Convert.ToSingle(Console.ReadLine());
             }
             public void Init(string a, int b, float c)
             {
@@ -27,7 +27,7 @@ namespace prog6.sem32
             }
             public void Endwar()
             {
-                score = population * millitarypow;
+                score = Convert.ToInt32(population * millitarypow);
             }
             public string title;
             public int population;
@@ -76,7 +76,6 @@ namespace prog6.sem32
             two.Display();
             Console.WriteLine("***********Начало войны***********");
             Console.WriteLine("\nУ государств еще есть возможность этого избежать, если\n одно из государств сдастся");
-            //**********
             Console.WriteLine($"\nГосударство {one.title} вы хотите сдаться? (1-да 2-нет)");
             int num;
             do
